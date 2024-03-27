@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Elivate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- NAVBAR CREATION -->
+   <header class="header">
+   </header>
+    <!-- LOGIN FORM CREATION -->
+    <div class="background"></div>
+    <div class="container">
+        <div class="item">
+            <h1>Elevate</h1>
+            <div class="text-item">
+                <h2>Welcome! <br><span>
+                    To Our Website!
+                </span></h2>
+                <p>Experience the power of Relaxation and Feel the power of Peace</p>
+                <div class="social-icon">
+                   
+                    <a href="https://twitter.com/elevate_vibes"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://instagram.com/the_elevated_vibes?igshid=ZDdkNTZiNTM="><i class='bx bxl-instagram'></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="login-section">
+            <div class="form-box login">
+                
+              <button id='login'>Login with your Google
+                <img src="images/google.svg" width="55px" height="55px" alt="Sign in with your Google account.">
+              </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<!-- SIGN UP FORM CREATION -->
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+  import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-auth.js";
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAMZeO2Q-y9WDYWJATZ2zNUx_MtLH_QJek",
+    authDomain: "elevate-35839.firebaseapp.com",
+    databaseURL: "https://elevate-35839-default-rtdb.firebaseio.com",
+    projectId: "elevate-35839",
+    storageBucket: "elevate-35839.appspot.com",
+    messagingSenderId: "865290860744",
+    appId: "1:865290860744:web:aa658f7abe0a44349f4dfd",
+    measurementId: "G-75T2QQVT97"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider(app);
+  const analytics = getAnalytics(app);
+  login.addEventListener('click',(e) => {
+  signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    console.log(result);
+
+
+    alert(user.displayName);
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+
+    alert(errorMessage);
+  });
+ });
+</script>
+       <script src="/__/firebase/6.2.4/firebase-app.js"></script>
+       <script src="/__/firebase/6.2.4/firebase-auth.js"></script>
+   
+       <!-- TODO: Add SDKs for Firebase products that you want to use
+           https://firebase.google.com/docs/web/setup#reserved-urls -->
+   
+       <!-- Initialize Firebase -->
+       <script src="/__/firebase/init.js"></script>
+
+<script src="index.js"></script>
+</html>

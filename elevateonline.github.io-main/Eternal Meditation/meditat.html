@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Meditation App</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+h1,h2{
+    text-align: center;
+    color:aquamarine;
+
+
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+
+}
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.timer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-container {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 10px solid #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time {
+    font-size: 70px;
+    font-weight: bold;
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.btn {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #000000;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+#play {
+    background-color: #008000;
+}
+
+#pause {
+    background-color: #ff0000;
+}
+    </style>
+</head>
+<body>
+
+    <h1>Start Meditating</h1>
+    <h2>Choose your meditation time:</h2>
+    <video id="bg-video" src="https://assets.mixkit.co/videos/preview/mixkit-waves-coming-to-the-beach-5016-large.mp4" muted loop></video>
+    <audio id="meditation-audio" src="https://cdn.pixabay.com/download/audio/2021/09/09/audio_478f62eb43.mp3?filename=waves-and-tears-sad-piano-music-with-calm-ocean-waves-8164.mp3" loop></audio>
+    <div class="timer">
+        <div class="time-container">
+            <div class="time">00:00</div>
+        </div>
+        <div class="buttons">
+            <div class="button-container">
+                <button id="two" class="btn">2 min</button>
+                <button id="five" class="btn">5 min</button>
+                <button id="ten" class="btn">10 min</button>
+                <button id="twenty" class="btn">20 min</button>
+            </div>
+            <div class="button-container">
+                <button id="play" class="btn">Play</button>
+                <button id="pause" class="btn">Pause</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let time = 0;
+let timeInput = 0;
+let intervalId = null;
+
+const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = time % 60;
+    return `${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+};
+
+const startTimer = () => {
+    if (intervalId !== null) {
+        clearInterval(intervalId);
+    }
+    intervalId = setInterval(() => {
+        time--;
+        if (time < 0) {
+            clearInterval(intervalId);
+            document.querySelector(".time").innerText = "00:00";
+            document.getElementById("meditation-audio").pause();
+            document.getElementById("bg-video").pause();
+        } else {
+            document.querySelector(".time").innerText = formatTime(time);
+        }
+    }, 1000);
+    document.getElementById("meditation-audio").play();
+    document.getElementById("bg-video").play();
+};
+
+const pauseTimer = () => {
+    clearInterval(intervalId);
+    document.getElementById("meditation-audio").pause();
+    document.getElementById("bg-video").pause();
+};
+
+const setTime = (input) => {
+    timeInput = input;
+    time = input;
+    document.querySelector(".time").innerText = formatTime(time);
+};
+
+document.getElementById("five").addEventListener("click", () => {
+    setTime(300);
+});
+
+document.getElementById("ten").addEventListener("click", () => {
+    setTime(600);
+});
+
+document.getElementById("two").addEventListener("click", () => {
+    setTime(120);
+});
+
+document.getElementById("twenty").addEventListener("click", () => {
+    setTime(1200);
+});
+
+document.getElementById("play").addEventListener("click", startTimer);
+
+document.getElementById("pause").addEventListener("click", pauseTimer);
+
+    </script>
+</body>
+</html>

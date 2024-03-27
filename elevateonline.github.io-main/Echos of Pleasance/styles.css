@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&family=Lobster&display=swap');
+
+body {
+  background-color: #1a1a2e;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+h1:hover {
+  color: rgb(226, 27, 110);
+}
+h1 {
+  font-size: 70px;
+  text-align: center;
+  -webkit-text-stroke: 1px #000;
+  font-family: 'Segoe UI';
+ 
+  text-shadow: 2px 2px 4px #6602BF;
+}
+
+p {
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.audio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.container {
+  width: 300px;
+  height: 60px;
+  position: relative;
+  margin: 0 20px;
+}
+
+.container audio {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.container audio:focus-visible {
+  opacity: 1;
+}
+
+.play-pause-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.play-pause-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-pause-icon {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.play-pause-icon::before,
+.play-pause-icon::after {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.play-pause-icon::before {
+  transform: translate(-30%, -50%);
+}
+
+.play-pause-icon::after {
+  transform: translate(30%, -50%);
+}
+
+.playing .play-pause-icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.playing .play-pause-icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.bon {
+  background-color: #fff;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bon:hover {
+  background-color: #2b2b4f;
+  color: #fff;
+}
+.footer-top .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.footer-brand {
+  max-width: 350px;
+  margin-bottom: 0;
+}
+
+.footer-list { margin-bottom: 0; }

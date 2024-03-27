@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Elevate</title>
+	<style>
+	@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&family=Lobster&display=swap');
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1a1a2e;
+        color: #fff;
+      }
+      .container {
+        position: relative;
+        text-align: center;
+        color: #fff;
+      }
+      .container img {
+        width: 100%;
+        height: auto;
+        opacity: 0.7;
+      }
+      .text-block {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .text-block h1, .text-block h3 {
+        margin: 0;
+      }
+      h1 {
+    font-size: 4em;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+      p {
+        font-size: 1.1em;
+        line-height: 1.5;
+        margin-top: 30px;
+      }
+      .btn {
+  display: inline-block;
+  padding: 20px 20px;
+  background-color: #e8f3f0;
+  color: #1c0101;
+  font-size: 1.1em;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #4f442b;
+}
+ 
+
+.collapsible  {
+  background-color: #3e0e67;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 1%;
+  margin-right: 10%;
+  border:none;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+}
+.collapsible:hover {
+  background-color: #2b2b4f;
+}
+
+.collapsible:after {
+  content: '\02795';
+  font-size: 13px;
+  color: #fff;
+  float: right;
+  margin-left: 5px;
+}
+
+.collapsible.active:after {
+  content: "\2796";
+}
+.bon {
+  background-color: #fff;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.bon:hover {
+  background-color: #2b2b4f;
+  color: #fff;
+}
+
+
+  
+  @media screen and (min-width: 768px) {
+    .container img {
+      max-width: 60%;
+    }
+    .text-block {
+      width: 40%;
+    }
+  }
+  
+</style>
+
+
+	<body>
+		<header>
+			<h1>Eternal Meditation</h1>
+		</header>
+		<main>
+			<!--<img src="https://getinfolist.com/wp-content/uploads/2014/09/2125909.jpg" width="100%">-->
+            <div class="container">
+                <img src="https://getinfolist.com/wp-content/uploads/2014/09/2125909.jpg" alt="Nor" width="100%" height="600px">
+                <div class="text-block">
+                  <h1>Welcome<br></h1>
+                  <h3>"Meditation is a way of being not a technique"</h3>
+                </div>
+              </div>
+							<p>Meditation allows the mind to relax. When the mind relaxes, the body comes with it.<br></p>
+
+              <p>Finding peace and calm in the chaos of life can be a real challenge, especially when you’re trying to balance work, social obligations, family, and personal life. You can develop a meditation practice that fits your schedule and gives you the space to relax both your mind and body.<br></p>
+             <p> We offer a variety meditation techniques to help you dicover the one that suits you best.</p>
+             <button type="button" class="collapsible"><h3>Meditate with Timer</h3></button>
+             <div class="content">
+               <p>Meditation is the practice of bringing attention to the inner and outside world, attaining awareness of oneself to achieve a mind that is emotionally calm and remains in a stable state.<br> With a meditation timer, you can remove the stress of time altogether and maintain all of your focus inward.You can choose suitable duration and start meditating. </p>
+               <button id="meditate-with-timer" class="btn">Start Meditating</button>
+             </div>
+             <button type="button" class="collapsible"><h3>Guided Meditation</h3></button>
+             <div class="content">
+               <p>Guided Meditation,one of the many forms of meditation, is where you are guided by a narrator to help relax then tension in your body and mind.<br>And don’t worry about sorting through thousands of YouTube videos and websites to find one to try, We did the work for you. Here are the guided meditations for you:</p>
+               <div class="video-container">
+                <iframe width="270" height="300" src="https://www.youtube.com/embed/ssss7V1_eyA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="270" height="300" src="https://www.youtube.com/embed/3gnX9H6HOlk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="270" height="300" src="https://www.youtube.com/embed/ihA3pQcaiKU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe width="270" height="300" src="https://www.youtube.com/embed/LiUnFJ8P4gM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          </div>
+            </main>
+						<button class="bon" onclick="goBack()">Back</button>
+
+						<script>
+							function goBack() {
+								window.history.back();
+							}
+						</script>
+
+		<footer>
+      <p>&copy; 2023 Elevate</p>
+		</footer>
+    <p class="footer-text">
+      Thank you for visiting our website
+      </p>
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+
+            for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+            content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+            });
+            }
+            document.getElementById("meditate-with-timer").addEventListener("click", mwt);
+		    function mwt(){
+			window.location.href="meditat.html"
+		}
+        </script>
+        
+	</body>
+    </html>
